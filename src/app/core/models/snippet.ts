@@ -1,6 +1,6 @@
 export interface ISnippet {
   id?: string;
-  filename: string;
+  name: string;
   mime: string;
   content: string;
   description?: string;

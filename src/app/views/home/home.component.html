@@ -45,7 +45,7 @@
           Quick and easy to share code snippets
         </h2>
         <p>
-          <a class="button is-outlined">
+          <a (click)="createSnippet()" class="button is-outlined">
             <span class="icon">
               <i class="fa fa-pencil-square-o"></i>
             </span>
@@ -118,11 +118,11 @@
 
     <div class="container">
 
-      <div class="section" style="padding: 25px 0">
+      <div *ngFor="let s of snippets$ | async" class="section" style="padding: 25px 0">
 
         <app-snippet
           [config]="exampleConfig"
-          [snippet]="exampleSnippet"
+          [snippet]="s"
         ></app-snippet>
 
       </div>

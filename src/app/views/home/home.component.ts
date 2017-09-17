@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {EditorConfiguration} from 'codemirror';
 import {ISnippet} from '../../core/models/snippet';
+import {SnippetsService} from '../../core/services/snippets/snippets.service';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,7 @@ import {ISnippet} from '../../core/models/snippet';
 export class HomeComponent implements OnInit {
 
   exampleSnippet: ISnippet = {
-    filename: 'index.ts',
+    name: 'index.ts',
     content: 'class Greeter {\n' +
     '  greeting: string;\n' +
     '  constructor (message: string) {\n' +
@@ -34,6 +36,8 @@ export class HomeComponent implements OnInit {
     description: 'Lorem ipsum dolor'
   };
 
+  snippets$: Observable<ISnippet[]>;
+
 
   exampleConfig: EditorConfiguration = {
     mode: 'javascript',
@@ -42,9 +46,18 @@ export class HomeComponent implements OnInit {
     viewportMargin: Infinity
   };
 
-  constructor() { }
+  constructor(private snippetsService: SnippetsService) {
+
+  }
+
+  createSnippet() {
+    this.snippetsService.create({
+      ...this.exampleSnippet
+    }).subscribe(console.log);
+  }
 
   ngOnInit() {
+    this.snippets$ = this.snippetsService.index();
   }
 
 }
