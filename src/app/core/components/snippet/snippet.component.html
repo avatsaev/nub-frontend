@@ -1,0 +1,30 @@
+
+<div class="card ">
+  <div class="card-header">
+    <div class="card-header-title">
+      {{snippet.filename}}
+    </div>
+
+  </div>
+
+  <div class="card-content">
+    <textarea codemirror
+              [content]="snippet.content"
+              [config]="config">
+    </textarea>
+
+    <div class="section">
+      <span><b>Description:</b> &nbsp;{{snippet.description}}</span>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <span class="card-footer-item">
+
+          Hosted with &nbsp; <i style="color: orangered" class="fa fa-heart"></i>&nbsp; on &nbsp;<a href="/">nub.io</a>
+    </span>
+  </div>
+
+
+</div>
+

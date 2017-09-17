@@ -8,7 +8,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "surge-deploy": "ng build --prod --build-optimizer  && cp dist/index.html dist/200.html && surge --domain nub.surge.sh --project ./dist "
+
   },
   "private": false,
   "dependencies": {
@@ -22,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^4.4.1",
     "@angular/router": "^4.4.1",
     "bulma": "^0.5.2",
+    "codemirror": "^5.29.0",
     "core-js": "^2.5.1",
     "font-awesome": "^4.7.0",
     "rxjs": "^5.4.3",
@@ -31,6 +34,7 @@
     "@angular/cli": "^1.4.2",
     "@angular/compiler-cli": "^4.4.1",
     "@angular/language-service": "^4.4.1",
+    "@types/codemirror": "0.0.46",
     "@types/jasmine": "^2.6.0",
     "@types/jasminewd2": "^2.0.3",
     "@types/node": "^8.0.28",

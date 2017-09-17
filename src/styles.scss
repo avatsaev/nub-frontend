@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 // 1. Import the initial variables
 @import "~bulma/sass/utilities/initial-variables";
-
+@import "~codemirror/lib/codemirror";
 // 2. Set your own initial variables
 // Update blue
 $blue: #007aff;
@@ -22,3 +22,13 @@ $primary: $blue;
 
 
 @import "~bulma";
+
+
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
