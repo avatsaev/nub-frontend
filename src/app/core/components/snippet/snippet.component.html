@@ -2,7 +2,8 @@
 <div class="card ">
   <div class="card-header">
     <div class="card-header-title">
-      {{snippet.name}}
+      <a [routerLink]="['/snippets', snippet.id]">{{snippet.name}}</a>
+
     </div>
 
   </div>
@@ -13,7 +14,7 @@
               [config]="config">
     </textarea>
 
-    <div class="section">
+    <div class="section" *ngIf="snippet.description.length">
       <span><b>Description:</b> &nbsp;{{snippet.description}}</span>
     </div>
   </div>

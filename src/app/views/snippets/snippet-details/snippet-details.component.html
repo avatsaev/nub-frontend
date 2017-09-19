@@ -1,0 +1,12 @@
+<app-snippet
+        *ngIf="snippet$ | async as snippet; else loading"
+        [snippet]="snippet"
+        [config]="{
+          mode: 'javascript',
+          lineNumbers: true,
+          readOnly: true
+        }"
+></app-snippet>
+<ng-template #loading>
+  <span>loading...</span>
+</ng-template>

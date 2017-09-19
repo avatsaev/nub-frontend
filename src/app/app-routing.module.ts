@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: 'app/views/home/home.module#HomeModule'
+  },
+  {
+    path: 'snippets',
+    loadChildren: 'app/views/snippets/snippets.module#SnippetsModule'
   }
 ];
 
