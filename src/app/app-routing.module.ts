@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: 'app/views/home/home.module#HomeModule'
+  },
+  {
+    path: 'nubs',
+    loadChildren: 'app/views/nubs/nubs.module#NubsModule'
   }
 ];
 

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {EditorConfiguration} from 'codemirror';
-import {ISnippet} from '../../models/snippet';
+import {Snippet} from '../../models/snippet';
 
 @Component({
   selector: 'app-snippet',
@@ -9,7 +9,7 @@ import {ISnippet} from '../../models/snippet';
 })
 export class SnippetComponent implements OnInit {
 
-  @Input() snippet: ISnippet;
+  @Input() snippet: Snippet;
   @Input() config: EditorConfiguration;
 
   constructor() { }

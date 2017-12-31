@@ -4,20 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {SharedModule} from './core/modules/shared.module';
+
 import {HttpClientModule} from '@angular/common/http';
+import { ToolbarComponent } from './core/components/toolbar/toolbar.component';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
-    HttpClientModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

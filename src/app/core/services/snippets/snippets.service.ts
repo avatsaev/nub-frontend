@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../environments/environment';
 import {Observable} from 'rxjs/Observable';
-import {ISnippet} from '../../models/snippet';
+import {Snippet} from '../../models/snippet';
 
 @Injectable()
 export class SnippetsService {
@@ -11,12 +11,12 @@ export class SnippetsService {
 
   }
 
-  index(): Observable<ISnippet[]> {
-    return this.http.get<ISnippet[]>(environment.nubApi.baseUrl + 'snippets');
+  index(): Observable<Snippet[]> {
+    return this.http.get<Snippet[]>(environment.nubApi.baseUrl + 'snippets');
   }
 
-  create(snippet): Observable<ISnippet> {
-    return this.http.post<ISnippet>(environment.nubApi.baseUrl + 'snippets', snippet);
+  create(snippet): Observable<Snippet> {
+    return this.http.post<Snippet>(environment.nubApi.baseUrl + 'snippets', snippet);
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EditorConfiguration} from 'codemirror';
-import {ISnippet} from '../../core/models/snippet';
+import {Snippet} from '../../core/models/snippet';
 import {SnippetsService} from '../../core/services/snippets/snippets.service';
 import {Observable} from 'rxjs/Observable';
 
@@ -11,7 +11,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class HomeComponent implements OnInit {
 
-  exampleSnippet: ISnippet = {
+  exampleSnippet: Snippet = {
     name: 'index.ts',
     content: 'class Greeter {\n' +
     '  greeting: string;\n' +
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
     description: 'Lorem ipsum dolor'
   };
 
-  snippets$: Observable<ISnippet[]>;
+  snippets$: Observable<Snippet[]>;
 
 
   exampleConfig: EditorConfiguration = {
