@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   nubApi: {
-    baseUrl: 'https://nub-api.herokuapp.com/'
+    baseUrl: 'https://nub-api.herokuapp.com/graphql'
   }
 };

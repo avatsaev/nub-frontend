@@ -5,8 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {SharedModule} from './core/modules/shared.module';
 
-import {HttpClientModule} from '@angular/common/http';
-import { ToolbarComponent } from './core/components/toolbar/toolbar.component';
+
 
 
 

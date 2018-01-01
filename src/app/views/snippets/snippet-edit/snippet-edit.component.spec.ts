@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NubCreateComponent } from './nub-create.component';
+import { SnippetEditComponent } from './snippet-edit.component';
 
-describe('NubCreateComponent', () => {
-  let component: NubCreateComponent;
-  let fixture: ComponentFixture<NubCreateComponent>;
+describe('SnippetEditComponent', () => {
+  let component: SnippetEditComponent;
+  let fixture: ComponentFixture<SnippetEditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NubCreateComponent ]
+      declarations: [ SnippetEditComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NubCreateComponent);
+    fixture = TestBed.createComponent(SnippetEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

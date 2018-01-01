@@ -1,0 +1,9 @@
+
+<app-snippet
+  *ngIf="snippet$ | async as s"
+  [snippet]="s"
+  [config]="{
+      mode: s.mime
+  }"
+></app-snippet>
+

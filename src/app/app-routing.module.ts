@@ -12,8 +12,8 @@ const routes: Routes = [
     loadChildren: 'app/views/home/home.module#HomeModule'
   },
   {
-    path: 'nubs',
-    loadChildren: 'app/views/nubs/nubs.module#NubsModule'
+    path: 'snippets',
+    loadChildren: 'app/views/snippets/snippets.module#SnippetsModule'
   }
 ];
 
