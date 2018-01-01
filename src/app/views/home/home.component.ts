@@ -4,6 +4,7 @@ import {Snippet} from '../../core/models/snippet';
 import {SnippetsService} from '../../core/services/snippets/snippets.service';
 import {Observable} from 'rxjs/Observable';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -47,7 +48,7 @@ export class HomeComponent implements OnInit {
   };
 
   constructor(private snippetsService: SnippetsService) {
-
+    this.snippets$ =  this.snippetsService.index();
   }
 
   createSnippet() {
@@ -57,7 +58,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.snippets$ = this.snippetsService.index();
+
   }
 
 }

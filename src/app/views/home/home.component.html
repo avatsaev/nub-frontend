@@ -12,80 +12,8 @@
   </div>
 
 
-  <div class="hero-cta">
-    <nav class="level">
-      <div class="level-item has-text-centered">
-        <p class="title">Features</p>
-      </div>
-    </nav>
-  </div>
-  <div class="section main">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-4">
-          <div class="panel">
-            <div class="panel-block section">
-              <div class="container">
-
-                <p class="has-text-centered"><i class="fa fa-camera-retro icon-block"></i></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
-
-                <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="column is-4">
-          <div class="panel">
-            <div class="panel-block section">
-
-              <div class="container">
-                <p class="has-text-centered"><i class="fa fa-bar-chart icon-block"></i></p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
-
-                <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-        <div class="column is-4">
-          <div class="panel">
-            <div class="panel-block section">
-
-              <div class="container">
-                <p class="has-text-centered"><i class="fa fa-cloud icon-block"></i></p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
-
-                <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-
-      <div *ngFor="let s of snippets$ | async" class="section" style="padding: 25px 0">
-
-        <app-snippet
-          [config]="exampleConfig"
-          [snippet]="s"
-        ></app-snippet>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
+  <ul>
+    <li *ngFor="let s of snippets$ | async">{{s.name}}</li>
+  </ul>
 
 </section>

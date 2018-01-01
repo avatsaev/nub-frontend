@@ -22,4 +22,7 @@ import { ToolbarComponent } from './core/components/toolbar/toolbar.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+
+
+}
