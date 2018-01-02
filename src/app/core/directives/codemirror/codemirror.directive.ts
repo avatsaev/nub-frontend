@@ -1,6 +1,15 @@
 
 import {EditorFromTextArea, EditorConfiguration, fromTextArea} from 'codemirror';
-import {Directive, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges
+} from '@angular/core';
 
 @Directive({
   selector: '[codemirror]'
@@ -24,7 +33,13 @@ export class CodeMirrorDirective implements OnInit, OnChanges {
   ngOnInit() {
     this.editorRef = fromTextArea(this.element.nativeElement, {...this._defaultConfig, ...this.config});
     this.editorRef.setValue(this.content);
-    this.editorRef.on('change', (cmInstance, event) => this.onChange.emit({editorInstance: cmInstance, changes: event}));
+    this.editorRef.on(
+        'change',
+        (cmInstance, event) => this.onChange.emit({
+          editorInstance: cmInstance,
+          changes: event
+        })
+      );
   }
 
   ngOnChanges(changes: SimpleChanges) {

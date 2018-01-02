@@ -16,8 +16,7 @@ export class SnippetsService {
     return this.apollo.query({
       query: snippetsQueries.GET_ALL
     }).pipe(
-      tap(console.log),
-      map(res => res.data.getSnippets)
+      map(res => res.data['getSnippets'])
     );
   }
 
@@ -28,8 +27,7 @@ export class SnippetsService {
       query: snippetsQueries.GET_BY_ID,
       variables: {id}
     }).pipe(
-      tap(console.log),
-      map(res => res.data.getSnippetById)
+      map(res => res.data['getSnippetById'])
     );
   }
 
@@ -38,7 +36,6 @@ export class SnippetsService {
       mutation: snippetsQueries.CREATE,
       variables: {...snippet}
     }).pipe(
-      tap(console.log),
       map(res => res.data)
     );
   }

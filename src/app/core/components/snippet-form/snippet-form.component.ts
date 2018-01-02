@@ -6,9 +6,11 @@ import {
   ViewChild
 } from '@angular/core';
 
-import {Snippet} from '../../models/snippet';
-import {CodeMirrorDirective} from '../../directives/codemirror.directive';
+
 import * as mime from 'mime-types';
+import {Snippet} from '@app/core/models/snippet';
+import {CodeMirrorDirective} from '@app/core/directives/codemirror/codemirror.directive';
+
 
 @Component({
   selector: 'app-snippet-form',
