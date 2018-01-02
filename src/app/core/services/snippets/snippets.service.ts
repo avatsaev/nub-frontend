@@ -43,4 +43,13 @@ export class SnippetsService {
     );
   }
 
+  destroy(id: string) {
+    return this.apollo.mutate({
+      mutation: snippetsQueries.DELETE,
+      variables: {id}
+    }).pipe(
+      tap(console.log)
+    );
+  }
+
 }

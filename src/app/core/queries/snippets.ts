@@ -26,9 +26,17 @@ export const GET_BY_ID = gql`
   }
 `;
 
+
+export const DELETE = gql`
+  mutation ($id: ID!){
+    deleteSnippet(id: $id) { id }
+  }
+  
+`;
+
 export const CREATE = gql`
   mutation ($name: String!, $description: String, $content: String!) {
-    createLink(
+    createSnippet(
       name: $name,
       description: $description,
       content: $content,

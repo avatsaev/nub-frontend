@@ -1,13 +1,22 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild
+} from '@angular/core';
+
 import {Snippet} from '../../models/snippet';
 import {CodeMirrorDirective} from '../../directives/codemirror.directive';
+import * as mime from 'mime-types';
 
 @Component({
   selector: 'app-snippet-form',
   templateUrl: './snippet-form.component.html',
   styleUrls: ['./snippet-form.component.css']
 })
-export class SnippetFormComponent implements OnInit {
+
+export class SnippetFormComponent {
 
   @Input() snippet: Snippet = {
     content: '',
@@ -21,9 +30,8 @@ export class SnippetFormComponent implements OnInit {
   @Output() onCancel = new EventEmitter<void>();
 
 
-  constructor() { }
-
-  ngOnInit() {
+  setMime() {
+    this.snippet.mime = mime.lookup(this.snippet.name);
   }
 
   onFormSubmit() {
@@ -32,7 +40,6 @@ export class SnippetFormComponent implements OnInit {
       this.snippet.content = this.editor.editorRef.getValue();
       this.onSubmit.emit({...this.snippet});
     }
-
 
   }
 

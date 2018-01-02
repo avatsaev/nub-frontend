@@ -1,43 +1,41 @@
 
 
-  <div class="field">
-    <label class="label">Name</label>
-    <div class="control">
-      <input name="name" class="input" [(ngModel)]="snippet.name" type="text" placeholder="">
-    </div>
+<div class="field">
+  <label class="label">Name</label>
+  <div class="control">
+    <input name="name" class="input" (change)="setMime()"   [(ngModel)]="snippet.name" type="text" placeholder="">
   </div>
+</div>
 
 
 
-  <textarea style="min-height: 600px"
-            #editor
-            codemirror
-            [config]="{
-              mode: 'javascript',
+<textarea style="min-height: 600px"
+          #editor
+          codemirror
+          [config]="{
+              mode: snippet.mime,
               lineNumbers: true,
               readOnly: false
             }"
-            [content]="snippet.content"
-  >
+          [content]="snippet.content"
+></textarea>
 
-</textarea>
+<div class="field">
+  <label class="label">Description</label>
+  <div class="control">
+    <textarea name="description" [(ngModel)]="snippet.description" class="textarea" ></textarea>
+  </div>
+</div>
 
-  <div class="field">
-    <label class="label">Description</label>
-    <div class="control">
-      <textarea name="description" [(ngModel)]="snippet.description" class="textarea" ></textarea>
-    </div>
+
+<div class="field is-grouped is-pulled-right ">
+  <div class="control">
+    <button (click)="onCancel.emit()" class="button is-link">Cancel</button>
+  </div>
+  <div class="control">
+    <button (click)="onFormSubmit()" class="button is-primary">Submit</button>
   </div>
 
-
-  <div class="field is-grouped is-pulled-right ">
-    <div class="control">
-      <button (click)="onCancel.emit()" class="button is-link">Cancel</button>
-    </div>
-    <div class="control">
-      <button (click)="onFormSubmit()" class="button is-primary">Submit</button>
-    </div>
-
-  </div>
+</div>
 
 

@@ -14,26 +14,22 @@
   background-color:transparent;
   color:#fff;
 }
+
 .hero-cta {
   padding: 30px 0;
 }
 
 .section{
+  p {
+    font-size: 17px;
+    line-height: 1.4;
+    color:#95A5A6;
+    display: block;
+  }
 
-
-
-    p {
-      font-size: 17px;
-      line-height: 1.4;
-      color:#95A5A6;
-      display: block;
-    }
-
-    .main {
-      background-color:#F0F0F0;
-    }
-
-
+  .main {
+    background-color:#F0F0F0;
+  }
 }
 
 .icon-block {
