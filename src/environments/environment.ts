@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   nubApi: {
-    graphqlUrl: 'https://api.nub.vatsaev.com/graphql'
+    graphqlUrl: 'http://api.nub.vatsaev.com/graphql'
   }
 };

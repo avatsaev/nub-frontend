@@ -36,7 +36,7 @@ export class SnippetsService {
       mutation: snippetsQueries.CREATE,
       variables: {...snippet}
     }).pipe(
-      map(res => res.data)
+      map(res => res.data['createSnippet'])
     );
   }
 
