@@ -1,19 +1,28 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import {SnippetComponent} from '../components/snippet/snippet.component';
-import {SnippetsService} from '../services/snippets/snippets.service';
-import {Apollo, ApolloModule} from 'apollo-angular';
+import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
+import {CommonModule} from '@angular/common';
+import {Apollo, ApolloModule} from 'apollo-angular';
 import {HttpLink, HttpLinkModule} from 'apollo-angular-link-http';
 
 import {InMemoryCache} from 'apollo-cache-inmemory';
-import {CodeMirrorDirective} from '../directives/codemirror.directive';
-import {SnippetFormComponent} from '../components/snippet-form/snippet-form.component';
-import {HeaderComponent} from '../components/header/header.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
-import {environment} from '../../../environments/environment';
+
+import {CodeMirrorDirective} from '@app/core/directives/codemirror/codemirror.directive';
+import {SnippetComponent} from '@app/core/components/snippet/snippet.component';
+import {HeaderComponent} from '@app/core/components/header/header.component';
+import {SnippetFormComponent} from '@app/core/components/snippet-form/snippet-form.component';
+import {SnippetListComponent} from '@app/core/components/snippet-list/snippet-list.component';
+import {SnippetsService} from '@app/core/services/snippets/snippets.service';
+import {environment} from '@app/env';
+
+const components = [
+  CodeMirrorDirective,
+  SnippetComponent,
+  HeaderComponent,
+  SnippetFormComponent,
+  SnippetListComponent
+];
 
 
 @NgModule({
@@ -21,22 +30,15 @@ import {environment} from '../../../environments/environment';
     CommonModule,
     FormsModule,
     RouterModule,
-    HttpClientModule, // provides HttpClient for HttpLink
+    HttpClientModule,
     ApolloModule,
     HttpLinkModule,
   ],
   declarations: [
-    CodeMirrorDirective,
-    SnippetComponent,
-    HeaderComponent,
-    SnippetFormComponent
+    ...components
   ],
   exports: [
-    CodeMirrorDirective,
-    SnippetComponent,
-    HeaderComponent,
-    SnippetFormComponent,
-    ApolloModule,
+    ...components
   ],
   providers: [
     SnippetsService
@@ -47,8 +49,6 @@ export class SharedModule {
   constructor(apollo: Apollo, httpLink: HttpLink) {
 
     apollo.create({
-      // By default, this client will send queries to the
-      // `/graphql` endpoint on the same host
       link: httpLink.create({uri: environment.nubApi.baseUrl}),
       cache: new InMemoryCache()
     });

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {Snippet} from '../../models/snippet';
-import {CodeMirrorDirective} from '../../directives/codemirror.directive';
+import {CodeMirrorDirective} from '../../directives/codemirror/codemirror.directive';
 
 @Component({
   selector: 'app-snippet-form',

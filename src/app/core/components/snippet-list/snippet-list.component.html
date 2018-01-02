@@ -1,0 +1,7 @@
+<app-snippet
+  *ngFor="let s of snippets"
+  [snippet]="s"
+  [config]="{
+      mode: s.mime
+    }"
+></app-snippet>
