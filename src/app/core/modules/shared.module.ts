@@ -49,7 +49,7 @@ export class SharedModule {
   constructor(apollo: Apollo, httpLink: HttpLink) {
 
     apollo.create({
-      link: httpLink.create({uri: environment.nubApi.baseUrl}),
+      link: httpLink.create({uri: environment.nubApi.graphqlUrl}),
       cache: new InMemoryCache()
     });
 
